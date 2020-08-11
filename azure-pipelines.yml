@@ -35,4 +35,6 @@ steps:
   inputs:
     ConnectionType: 'PublishProfile'
     PublishProfilePath: '$(System.DefaultWorkingDirectory)/elFinder.NetCore.Web/Properties/PublishProfiles/fileuploaderwithazure - Web Deploy.pubxml'
+    PublishProfilePassword: 'Fhkec7WKZf1JkS6rzfvwQtMn5Pe5Q1ogytCFdQkpsgHlqsmNHaeJALWaW39b'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    
