@@ -10,11 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'PublishProfile'
-    PublishProfilePath: '$(System.DefaultWorkingDirectory)/elFinder.NetCore.Web/Properties/PublishProfiles/fileuploaderwithazure - Web Deploy.pubxml'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
@@ -37,3 +33,8 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'PublishProfile'
+    PublishProfilePath: '$(System.DefaultWorkingDirectory)/elFinder.NetCore.Web/Properties/PublishProfiles/fileuploaderwithazure - Web Deploy.pubxml'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
