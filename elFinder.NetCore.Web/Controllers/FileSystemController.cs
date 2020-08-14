@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
+using elFinder.NetCore;
 using elFinder.NetCore.Drivers.FileSystem;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace elFinder.NetCore.Web.Controllers
+namespace FileUploader.Controllers
 {
     [Route("el-finder/file-system")]
     public class FileSystemController : Controller

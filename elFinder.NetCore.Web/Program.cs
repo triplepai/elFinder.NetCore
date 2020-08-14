@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace elFinder.NetCore.Web
+namespace FileUploader
 {
     public class Program
     {

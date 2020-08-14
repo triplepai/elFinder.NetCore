@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "elFinder.NetCore.Web", "elFinder.NetCore.Web\elFinder.NetCore.Web.csproj", "{E7EB177A-6ACB-4DF9-9084-6863C85701F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploader", "elFinder.NetCore.Web\FileUploader.csproj", "{E7EB177A-6ACB-4DF9-9084-6863C85701F8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "elFinder.NetCore", "elFinder.NetCore\elFinder.NetCore.csproj", "{F7461AED-5E01-4FE0-AA1A-1C1241B4C96A}"
 EndProject

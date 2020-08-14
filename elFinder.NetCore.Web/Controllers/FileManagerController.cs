@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace elFinder.NetCore.Web.Controllers
+namespace FileUploader.Controllers
 {
     [Route("file-manager")]
     public class FileManagerController : Controller

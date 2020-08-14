@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using elFinder.NetCore.Web.Data;
+using FileUploader.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace elFinder.NetCore.Web
+namespace FileUploader
 {
     public class Startup
     {
@@ -35,11 +35,13 @@ namespace elFinder.NetCore.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<FileMangerDbContext>(options =>
-            options.UseSqlServer(
-                Configuration.GetConnectionString("FileMangerDbContextConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("FileMangerDbContextConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<FileMangerDbContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -69,6 +71,7 @@ namespace elFinder.NetCore.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages(); // Must have this to create route for razor page
             });
 
             WebRootPath = env.WebRootPath;

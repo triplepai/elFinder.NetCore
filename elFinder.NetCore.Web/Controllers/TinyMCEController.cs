@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace elFinder.NetCore.Web.Controllers
+namespace FileUploader.Controllers
 {
     [Route("tiny-mce")]
     public class TinyMCEController : Controller
