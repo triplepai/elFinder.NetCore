@@ -23,14 +23,9 @@ steps:
     restoreSolution: '$(solution)'
 
 - task: DotNetCoreCLI@2
-    displayName: 'dotnet publish $(buildConfiguration)'
-    inputs:
-    command: publish
-    projects: '**/elFinder.NetCore.Web.csproj'
-    publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: true
-    workingDirectory: $(workingDirectory)
+  inputs:
+    command: 'build'
+    projects: '$(System.DefaultWorkingDirectory)/elFinder.NetCore.Web/elFinder.NetCore.Web.csproj'
 
 - task: VSTest@2
   inputs:
@@ -40,4 +35,6 @@ steps:
   inputs:
     ConnectionType: 'PublishProfile'
     PublishProfilePath: '$(System.DefaultWorkingDirectory)/elFinder.NetCore.Web/Properties/PublishProfiles/fileuploaderwithazure - Web Deploy.pubxml'
+    PublishProfilePassword: 'Fhkec7WKZf1JkS6rzfvwQtMn5Pe5Q1ogytCFdQkpsgHlqsmNHaeJALWaW39b'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    
